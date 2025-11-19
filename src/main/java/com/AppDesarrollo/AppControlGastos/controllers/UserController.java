@@ -2,12 +2,9 @@ package com.AppDesarrollo.AppControlGastos.controllers;
 
 import com.AppDesarrollo.AppControlGastos.dtos.UserRequest;
 import com.AppDesarrollo.AppControlGastos.dtos.UserResponse;
-import com.AppDesarrollo.AppControlGastos.entities.User;
 import com.AppDesarrollo.AppControlGastos.services.UserServiceInterface;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
