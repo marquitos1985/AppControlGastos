@@ -31,6 +31,15 @@ public class Income {
     private LocalDateTime entryDate;
     private String description;
 
+
+    @ManyToMany(targetEntity = CostOrigin.class, cascade = CascadeType.ALL)
+    @JoinTable(name = "income_per_cost_origin",
+            joinColumns=
+            @JoinColumn(name="cost_origin_id", referencedColumnName="id"),
+            inverseJoinColumns=
+            @JoinColumn(name="income_id", referencedColumnName="id"))
+    private List<CostOrigin> costOriginList;
+    /*
     @ManyToMany(targetEntity = CostOrigin.class, cascade = CascadeType.ALL)
     @JoinTable(name = "income_per_cost_origin",
             joinColumns=
@@ -39,5 +48,7 @@ public class Income {
             @JoinColumn(name="income_id", referencedColumnName="id"))
     private List<Income> incomeList;
 
+
+     */
 
 }
