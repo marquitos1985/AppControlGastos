@@ -11,6 +11,7 @@ import java.util.Currency;
 import java.util.List;
 import java.util.Map;
 
+@Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

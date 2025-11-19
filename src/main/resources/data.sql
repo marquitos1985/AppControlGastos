@@ -1,16 +1,16 @@
-INSERT INTO users (firstName,lastName, email, password)
+INSERT INTO users (first_name,last_name, email, password)
 VALUES ('User', 'uno', 'user1@example.com', '$2a$10$2Dbs7pKECSqPQg9sIYYdFeaKDlCiW6IDm9Ok/lmv7DmVquLUd0Rpa1');
 
-INSERT INTO users (firstName,lastName, email, password)
+INSERT INTO users (first_name,last_name, email, password)
 VALUES ('User', 'dos', 'user2@example.com', '$2a$10$2Dbs7pKECSqPQg9sIYYdFeaKDlCiW6IDm9Ok/lmv7DmVquLUd0Rpa2');
 
-INSERT INTO users (firstName,lastName, email, password)
+INSERT INTO users (first_name,last_name, email, password)
 VALUES ('User', 'tres', 'user3@example.com', '$2a$10$2Dbs7pKECSqPQg9sIYYdFeaKDlCiW6IDm9Ok/lmv7DmVquLUd0Rpa3');
 
-INSERT INTO users (firstName,lastName, email, password)
+INSERT INTO users (first_name,last_name, email, password)
 VALUES ('User', 'cuatro', 'user4@example.com', '$2a$10$2Dbs7pKECSqPQg9sIYYdFeaKDlCiW6IDm9Ok/lmv7DmVquLUd0Rpa4');
 
-INSERT INTO users (firstName,lastName, email, password)
+INSERT INTO users (first_name,last_name, email, password)
 VALUES ('User', 'cinco', 'user5@example.com', '$2a$10$2Dbs7pKECSqPQg9sIYYdFeaKDlCiW6IDm9Ok/lmv7DmVquLUd0Rpa5');
 
 
@@ -52,22 +52,22 @@ VALUES ('Alimento', 'Comida de la casa');
 
 
 
-INSERT INTO costs (expirationDate, name, description, amount, currency, category_id, cost_origin_id)
+INSERT INTO costs (expiration_date, name, description, amount, currency, category_id, cost_origin_id)
 VALUES ('1985-10-10', 'Patente auto', 'OHM750', 45000, '$', 2, 1);
 
-INSERT INTO costs (expirationDate, name, description, amount, currency, category_id, cost_origin_id)
+INSERT INTO costs (expiration_date, name, description, amount, currency, category_id, cost_origin_id)
 VALUES ('1985-10-10', 'Agua', 'Osse', 30000, '$', 1, 1);
 
-INSERT INTO costs (expirationDate, name, description, amount, currency, category_id, cost_origin_id)
+INSERT INTO costs (expiration_date, name, description, amount, currency, category_id, cost_origin_id)
 VALUES ('1985-10-10', 'Gas', 'Camuzzi', 100000, '$', 1, 1);
 
-INSERT INTO costs (expirationDate, name, description, amount, currency, category_id, cost_origin_id)
+INSERT INTO costs (expiration_date, name, description, amount, currency, category_id, cost_origin_id)
 VALUES ('1985-10-10', 'Patente auto', 'OHM750', 45000, '$', 2, 5);
 
-INSERT INTO costs (expirationDate, name, description, amount, currency, category_id, cost_origin_id)
+INSERT INTO costs (expiration_date, name, description, amount, currency, category_id, cost_origin_id)
 VALUES ('1985-10-10', 'Agua', 'Osse', 30000, '$', 1, 5);
 
-INSERT INTO costs (expirationDate, name, description, amount, currency, category_id, cost_origin_id)
+INSERT INTO costs (expiration_date, name, description, amount, currency, category_id, cost_origin_id)
 VALUES ('1985-10-10', 'Gas', 'Camuzzi', 100000, '$', 1, 5);
 
 
@@ -76,10 +76,10 @@ VALUES ('1985-10-10', 'Gas', 'Camuzzi', 100000, '$', 1, 5);
 
 
 
-INSERT INTO incomes (name, entryDate, incomeType, amount, currency, description, user_id)
+INSERT INTO incomes (name, entry_date, income_type, amount, currency, description, user_id)
 VALUES ('Sueldo', '2025-10-01', 'MONTHLY', 2000000, '$', 'Telecom', 1);
 
-INSERT INTO incomes (name, entryDate, incomeType, amount, currency, description,user_id)
+INSERT INTO incomes (name, entry_date, income_type, amount, currency, description,user_id)
 VALUES ('Préstamo', '2025-10-01', 'ONLY', 3000000, '$','BBVA', 1);
 
 

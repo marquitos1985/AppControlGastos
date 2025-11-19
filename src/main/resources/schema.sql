@@ -1,7 +1,7 @@
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    firstName VARCHAR(255),
-    lastName VARCHAR(255),
+    first_name VARCHAR(255),
+    last_name VARCHAR(255),
     email VARCHAR(255),
     password VARCHAR(255)
 
@@ -24,7 +24,7 @@ CREATE TABLE categories (
 
 CREATE TABLE costs (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    expirationDate DATE,
+    expiration_date DATE,
     name VARCHAR(255),
     description VARCHAR(255),
     amount DOUBLE,
@@ -54,8 +54,8 @@ CREATE TABLE cost_items (
 CREATE TABLE incomes (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255),
-    entryDate DATE,
-    incomeType VARCHAR(255),
+    entry_date DATE,
+    income_type VARCHAR(255),
     amount DOUBLE,
     currency VARCHAR(255),
     description VARCHAR(255),
