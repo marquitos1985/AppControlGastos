@@ -23,11 +23,11 @@ public class IncomeResponse {
 
     private Long id;
     private String name;
-    private String incomeType;
+    private IncomeType incomeType;
     private Double amount;
     private Currency currency;
     private LocalDateTime entryDate;
     private String description;
 
-    private List<CostOriginResponse> costOriginResponseList;
+    //private List<CostOriginResponse> costOriginResponseList;
 }

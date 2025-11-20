@@ -14,7 +14,6 @@ import java.util.Currency;
 @Builder
 public class CostItemRequest {
 
-
     private String name;
     private Double amount;
     private Currency currency;

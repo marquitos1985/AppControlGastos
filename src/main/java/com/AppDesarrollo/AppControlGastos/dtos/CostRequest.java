@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 import java.util.Currency;
-import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -20,10 +19,7 @@ public class CostRequest {
     private LocalDateTime expirationDate;
     private Double amount;
     private Currency currency;
-
-    private List<CostItemRequest> costItemRequestList;
-
-    private Category category;
+    private CategoryRequest categoryRequest;
 
 
 }

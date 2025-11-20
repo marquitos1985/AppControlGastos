@@ -16,7 +16,7 @@ import java.util.Currency;
 public class IncomeRequest {
 
     private String name;
-    private String incomeType;
+    private IncomeType incomeType;
     private Double amount;
     private Currency currency;
     private LocalDateTime entryDate;

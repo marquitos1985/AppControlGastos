@@ -18,5 +18,5 @@ public class CostOriginResponse {
     private String name;
     private String description;
 
-    private List<CostResponse> costResponseList;
+    //private List<CostResponse> costResponseList;
 }

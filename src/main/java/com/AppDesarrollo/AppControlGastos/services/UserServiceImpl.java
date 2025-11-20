@@ -49,13 +49,7 @@ public class UserServiceImpl implements UserServiceInterface{
 
         User user = this.userRepository.findById(id).orElse(null);
 
-        log.info("USER ----------------------");
-
-
-
         if(user != null){
-            log.info(user.toString());
-            log.info("Deleting..........................................");
             this.userRepository.delete(user);
 
 

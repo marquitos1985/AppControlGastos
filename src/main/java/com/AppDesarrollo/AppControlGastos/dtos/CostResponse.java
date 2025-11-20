@@ -24,9 +24,9 @@ public class CostResponse {
     private LocalDateTime expirationDate;
     private Double amount;
     private Currency currency;
+    //private CategoryResponse categoryResponse;
+
+    //private List<CostItemResponse> costItemResponseList;
 
 
-    private List<CostItemResponse> costItemResponseList;
-
-    private Category category;
 }
