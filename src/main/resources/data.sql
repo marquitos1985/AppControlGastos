@@ -53,22 +53,22 @@ VALUES ('Alimento', 'Comida de la casa');
 
 
 INSERT INTO costs (expiration_date, name, description, amount, currency, category_id, cost_origin_id)
-VALUES ('1985-10-10', 'Patente auto', 'OHM750', 45000, '$', 2, 1);
+VALUES ('1985-10-10', 'Patente auto', 'OHM750', 45000, 'ARS', 2, 1);
 
 INSERT INTO costs (expiration_date, name, description, amount, currency, category_id, cost_origin_id)
-VALUES ('1985-10-10', 'Agua', 'Osse', 30000, '$', 1, 1);
+VALUES ('1985-10-10', 'Agua', 'Osse', 30000, 'ARS', 1, 1);
 
 INSERT INTO costs (expiration_date, name, description, amount, currency, category_id, cost_origin_id)
-VALUES ('1985-10-10', 'Gas', 'Camuzzi', 100000, '$', 1, 1);
+VALUES ('1985-10-10', 'Gas', 'Camuzzi', 100000, 'ARS', 1, 1);
 
 INSERT INTO costs (expiration_date, name, description, amount, currency, category_id, cost_origin_id)
 VALUES ('1985-10-10', 'Patente auto', 'OHM750', 45000, '$', 2, 5);
 
 INSERT INTO costs (expiration_date, name, description, amount, currency, category_id, cost_origin_id)
-VALUES ('1985-10-10', 'Agua', 'Osse', 30000, '$', 1, 5);
+VALUES ('1985-10-10', 'Agua', 'Osse', 30000, 'ARS', 1, 5);
 
 INSERT INTO costs (expiration_date, name, description, amount, currency, category_id, cost_origin_id)
-VALUES ('1985-10-10', 'Gas', 'Camuzzi', 100000, '$', 1, 5);
+VALUES ('1985-10-10', 'Gas', 'Camuzzi', 100000, 'ARS', 1, 5);
 
 
 
@@ -77,10 +77,10 @@ VALUES ('1985-10-10', 'Gas', 'Camuzzi', 100000, '$', 1, 5);
 
 
 INSERT INTO incomes (name, entry_date, income_type, amount, currency, description, user_id)
-VALUES ('Sueldo', '2025-10-01', 'MONTHLY', 2000000, '$', 'Telecom', 1);
+VALUES ('Sueldo', '2025-10-01', 'MONTHLY', 2000000, 'ARS', 'Telecom', 1);
 
 INSERT INTO incomes (name, entry_date, income_type, amount, currency, description,user_id)
-VALUES ('Préstamo', '2025-10-01', 'ONLY', 3000000, '$','BBVA', 1);
+VALUES ('Préstamo', '2025-10-01', 'ONLY', 3000000, 'ARS','BBVA', 1);
 
 
 

@@ -6,8 +6,16 @@ import com.AppDesarrollo.AppControlGastos.entities.Cost;
 import com.AppDesarrollo.AppControlGastos.exceptions.NotFoundException;
 import com.AppDesarrollo.AppControlGastos.repositories.CategoryRespository;
 import com.AppDesarrollo.AppControlGastos.repositories.CostRepository;
+import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+@Service
+@Transactional
+@Slf4j
+@AllArgsConstructor
 public class CategoryServiceImpl implements CategoryServiceInterface{
 
     private CategoryRespository categoryRespository;

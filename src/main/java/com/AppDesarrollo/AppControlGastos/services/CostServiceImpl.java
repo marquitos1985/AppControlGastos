@@ -1,11 +1,18 @@
 package com.AppDesarrollo.AppControlGastos.services;
 
-import com.AppDesarrollo.AppControlGastos.dtos.CostRequest;
 import com.AppDesarrollo.AppControlGastos.dtos.CostResponse;
 import com.AppDesarrollo.AppControlGastos.entities.Cost;
 import com.AppDesarrollo.AppControlGastos.repositories.CostRepository;
+import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+@Service
+@Transactional
+@Slf4j
+@AllArgsConstructor
 public class CostServiceImpl implements CostServiceInterface {
 
     private CostRepository costRepository;
