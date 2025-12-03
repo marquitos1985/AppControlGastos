@@ -1,13 +1,14 @@
 package com.AppDesarrollo.AppControlGastos.dtos;
 
 import com.AppDesarrollo.AppControlGastos.entities.Category;
+import com.AppDesarrollo.AppControlGastos.entities.enums.Currency;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.Currency;
 
 @Data
 @AllArgsConstructor
@@ -16,10 +17,11 @@ import java.util.Currency;
 public class CostRequest {
 
     private String name;
-    private LocalDateTime expirationDate;
+    private LocalDate expirationDate;
     private Double amount;
     private Currency currency;
-    private CategoryRequest categoryRequest;
+    //private CategoryRequest categoryRequest;
+    private Long categoryId;
 
 
 }

@@ -36,17 +36,17 @@ VALUES ('Casa', 'Mi local', 5);
 
 
 
-INSERT INTO categories (name, description)
-VALUES ('Servicios', 'Servicios');
+INSERT INTO categories (name, description, user_id)
+VALUES ('Servicios', 'Servicios', 1);
 
-INSERT INTO categories (name, description)
-VALUES ('Impuestos', '');
+INSERT INTO categories (name, description, user_id)
+VALUES ('Impuestos', '', 2);
 
-INSERT INTO categories (name, description)
-VALUES ('Varios', 'Gastos generales');
+INSERT INTO categories (name, description, user_id)
+VALUES ('Varios', 'Gastos generales', 1);
 
-INSERT INTO categories (name, description)
-VALUES ('Alimento', 'Comida de la casa');
+INSERT INTO categories (name, description, user_id)
+VALUES ('Alimento', 'Comida de la casa', 2);
 
 
 
@@ -62,7 +62,7 @@ INSERT INTO costs (expiration_date, name, description, amount, currency, categor
 VALUES ('1985-10-10', 'Gas', 'Camuzzi', 100000, 'ARS', 1, 1);
 
 INSERT INTO costs (expiration_date, name, description, amount, currency, category_id, cost_origin_id)
-VALUES ('1985-10-10', 'Patente auto', 'OHM750', 45000, '$', 2, 5);
+VALUES ('1985-10-10', 'Patente auto', 'OHM750', 45000, 'ARS', 2, 5);
 
 INSERT INTO costs (expiration_date, name, description, amount, currency, category_id, cost_origin_id)
 VALUES ('1985-10-10', 'Agua', 'Osse', 30000, 'ARS', 1, 5);

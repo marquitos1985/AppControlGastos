@@ -1,15 +1,15 @@
 package com.AppDesarrollo.AppControlGastos.entities;
 
+import com.AppDesarrollo.AppControlGastos.entities.enums.Currency;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.Currency;
 import java.util.List;
-import java.util.Map;
 
 @Entity
 @Data
@@ -23,8 +23,10 @@ public class Cost {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private LocalDateTime expirationDate;
+    private LocalDate expirationDate;
     private Double amount;
+
+    @Enumerated(value = EnumType.STRING)
     private Currency currency;
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
