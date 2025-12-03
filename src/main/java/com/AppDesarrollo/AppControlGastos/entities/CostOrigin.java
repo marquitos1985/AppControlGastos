@@ -27,6 +27,13 @@ public class CostOrigin {
     @JoinColumn(name="cost_origin_id")
     private List<Cost> costList;
 
+
+    @ManyToMany(targetEntity = Income.class)
+    @JoinTable(name = "income_per_cost_origin",
+            joinColumns= @JoinColumn(name="cost_origin_id", referencedColumnName="id"),
+            inverseJoinColumns= @JoinColumn(name="income_id", referencedColumnName="id"))
+    private List<Income> incomeList;
+
     /*
     @ManyToMany(targetEntity = Income.class, cascade = CascadeType.ALL)
     @JoinTable(name = "category_per_cost_origin",

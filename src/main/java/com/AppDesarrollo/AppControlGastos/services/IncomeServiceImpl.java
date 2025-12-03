@@ -81,7 +81,7 @@ public class IncomeServiceImpl implements IncomeServiceInterface{
 
                 incomeUpdated = this.incomeRequestToIncome(incomeRequest);
                 incomeUpdated.setId(incomeId);
-                incomeUpdated.setCostOriginList(income.getCostOriginList());
+                //incomeUpdated.setCostOriginList(income.getCostOriginList());
                 this.incomeRepository.save(incomeUpdated);
 
                 incomeResponse = this.incomeToIncomeResponse(incomeUpdated);
@@ -102,10 +102,6 @@ public class IncomeServiceImpl implements IncomeServiceInterface{
 
             if(user.getIncomeList().stream().anyMatch(income1 -> income1.getId().equals(incomeId))){
 
-                log.info(String.valueOf(income.getId().equals(incomeId)));
-                log.info(income.toString());
-                //this.incomeRepository.deleteById(incomeId);
-                //this.incomeRepository.delete(income);
                 user.getIncomeList().remove(income);
                 this.userRepository.save(user);
 
@@ -132,7 +128,7 @@ public class IncomeServiceImpl implements IncomeServiceInterface{
                 .currency(currency)
                 .entryDate(incomeRequest.getEntryDate())
                 .description(incomeRequest.getDescription())
-                .costOriginList(new ArrayList<CostOrigin>())
+                //.costOriginList(new ArrayList<CostOrigin>())
                 .build();
 
         return income;
