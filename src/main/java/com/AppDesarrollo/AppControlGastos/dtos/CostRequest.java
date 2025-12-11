@@ -20,8 +20,7 @@ public class CostRequest {
     private LocalDate expirationDate;
     private Double amount;
     private Currency currency;
-    //private CategoryRequest categoryRequest;
-    private Long categoryId;
+    private Long categoryId;//categoryId == 0 ES SIN CATEGORIA
 
 
 }

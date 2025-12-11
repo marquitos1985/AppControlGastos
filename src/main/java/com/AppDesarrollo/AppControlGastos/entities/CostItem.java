@@ -18,6 +18,8 @@ import java.util.Map;
 @Table(name = "cost_items")
 public class CostItem {
 
+
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

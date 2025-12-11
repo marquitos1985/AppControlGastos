@@ -34,7 +34,8 @@ public class CostOriginServiceImpl implements CostOriginServiceInterface{
     @Override
     public List<CostOriginResponse> findByUserId(Long userId) {
 
-        User user = this.userRepository.findById(userId).orElseThrow(() -> new NotFoundException("User id not found: " + userId));
+        User user = this.userRepository.findById(userId)
+                .orElseThrow(() -> new NotFoundException("User id not found: " + userId));
 
         List<CostOrigin> costOriginList = user.getCostOriginList();
         List<CostOriginResponse> costOriginResponseList = costOriginList.stream().map(costOrigin -> {

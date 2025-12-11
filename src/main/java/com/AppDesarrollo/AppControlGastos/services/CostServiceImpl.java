@@ -18,7 +18,6 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,6 +30,12 @@ public class CostServiceImpl implements CostServiceInterface {
     private CostRepository costRepository;
     private CategoryRespository categoryRespository;
     private CostOriginRepository costOriginRepository;
+
+
+    private static final Category noneCategory = Category.builder()
+            .name("NONE")
+            .description("NONE")
+            .build();
 
     @Override
     public List<CostResponse> getByCostOriginId(Long costOriginId) {
@@ -161,8 +166,15 @@ public class CostServiceImpl implements CostServiceInterface {
 
     private Cost costRequestToCost(CostRequest costRequest){
 
-        Category category = this.categoryRespository.findById(costRequest.getCategoryId())
-                .orElseThrow(() -> new NotFoundException("Category id not found: " + costRequest.getCategoryId()));
+        Category category = new Category();
+
+
+        if (costRequest.getCategoryId() != 0){//sin categoría
+            category = this.categoryRespository.findById(costRequest.getCategoryId())
+                    .orElseThrow(() -> new NotFoundException("Category id not found: " + costRequest.getCategoryId()));
+
+        }
+
 
         Cost cost = Cost.builder()
                 .name(costRequest.getName())
