@@ -1,6 +1,8 @@
 package com.AppDesarrollo.AppControlGastos.services;
 
+import com.AppDesarrollo.AppControlGastos.dtos.CostItemRequest;
 import com.AppDesarrollo.AppControlGastos.dtos.CostItemResponse;
+import com.AppDesarrollo.AppControlGastos.dtos.CostRequest;
 import com.AppDesarrollo.AppControlGastos.entities.Cost;
 import com.AppDesarrollo.AppControlGastos.entities.CostItem;
 import com.AppDesarrollo.AppControlGastos.exceptions.NotFoundException;
@@ -39,6 +41,70 @@ public class CostItemServiceImpl implements CostItemServiceInterface{
 
     }
 
+    @Override
+    public CostItemResponse create(CostItemRequest costItemRequest, Long costId) {
+        Cost cost = this.costRepository.findById(costId)
+                .orElseThrow(() -> new NotFoundException("Cost id not found: " + costId));
+
+        CostItem costItem = this.costItemRequestToCostItem(costItemRequest);
+
+        CostItemResponse costItemResponse = new CostItemResponse();
+
+        cost.getCostItemList().add(costItem);
+
+        costItem = this.costItemRepository.save(costItem);
+        this.costRepository.save(cost);
+
+        costItemResponse = this.costItemToCostItemResponse(costItem);
+
+
+        return costItemResponse;
+    }
+
+    @Override
+    public CostItemResponse update(CostItemRequest costItemRequest, Long costItemId) {
+        CostItem costItem = this.costItemRepository.findById(costItemId)
+                .orElseThrow(() -> new NotFoundException("Cost item id not found: " + costItemId));
+
+        CostItemResponse costItemResponse = new CostItemResponse();
+
+        CostItem newCostItem = this.costItemRequestToCostItem(costItemRequest);
+        newCostItem.setId(costItem.getId());
+
+        costItem = this.costItemRepository.save(newCostItem);
+
+        costItemResponse = this.costItemToCostItemResponse(costItem);
+
+        return costItemResponse;
+    }
+
+    @Override
+    public void delete(Long costId, Long costItemId) {
+
+        Cost cost = this.costRepository.findById(costId)
+                .orElseThrow(() -> new NotFoundException("Cost id not found: " + costId));
+
+        CostItem costItem = this.costItemRepository.findById(costItemId)
+                .orElseThrow(() -> new NotFoundException("Cost item id not found: " + costItemId));
+
+        if(this.existsIntoCostItemList(cost, costItem)){
+            cost.getCostItemList().remove(costItem);
+            this.costItemRepository.deleteById(costItemId);
+
+            this.costRepository.save(cost);
+
+        }else {
+
+            throw new NotFoundException("Cost item id: " + costItemId + "not found into cost id: " + costId);
+        }
+
+
+
+
+
+
+    }
+
 
     private CostItemResponse costItemToCostItemResponse(CostItem costItem){
 
@@ -48,6 +114,21 @@ public class CostItemServiceImpl implements CostItemServiceInterface{
         return costItemResponse;
 
 
+
+    }
+
+    private CostItem costItemRequestToCostItem(CostItemRequest costItemRequest){
+        CostItem costItem = new CostItem();
+
+        BeanUtils.copyProperties(costItemRequest, costItem);
+
+        return costItem;
+
+    }
+
+    private boolean existsIntoCostItemList(Cost cost, CostItem costItem){
+
+        return cost.getCostItemList().contains(costItem);
 
     }
 

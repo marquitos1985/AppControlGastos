@@ -3,8 +3,6 @@ package com.AppDesarrollo.AppControlGastos.controllers;
 
 import com.AppDesarrollo.AppControlGastos.dtos.CategoryRequest;
 import com.AppDesarrollo.AppControlGastos.dtos.CategoryResponse;
-import com.AppDesarrollo.AppControlGastos.dtos.CostItemResponse;
-import com.AppDesarrollo.AppControlGastos.repositories.CategoryRespository;
 import com.AppDesarrollo.AppControlGastos.services.CategoryServiceInterface;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
