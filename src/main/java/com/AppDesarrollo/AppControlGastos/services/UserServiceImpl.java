@@ -11,6 +11,7 @@ import com.AppDesarrollo.AppControlGastos.repositories.UserRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -25,6 +26,7 @@ import java.util.List;
 public class UserServiceImpl implements UserServiceInterface{
 
     private UserRepository userRepository;
+    private PasswordEncoder passwordEncoder;
 
     @Override
     public UserResponse create(UserRequest userRequest) {
@@ -107,11 +109,15 @@ public class UserServiceImpl implements UserServiceInterface{
     }
 
     private User userRequestToUser(UserRequest userRequest){
+
+        var pass = passwordEncoder.encode(userRequest.getPassword());//codfica el password
+        log.info("PASS: " + pass);
         User user = User.builder()
                 .firstName(userRequest.getFirstName())
                 .lastName(userRequest.getLastName())
                 .email(userRequest.getEmail())
-                .password(userRequest.getPassword())
+                //.password(userRequest.getPassword())
+                .password(pass)
                 .costOriginList(new ArrayList<CostOrigin>())
                 .incomeList(new ArrayList<Income>())
                 .build();
